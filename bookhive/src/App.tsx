@@ -1,11 +1,21 @@
 import React from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Home from './components/main/Home';
+import MainLayout from './pages/MainLayout';
+import LoginPage from './pages/LoginPage';
+
+
+const router = createBrowserRouter([
+  {path:'/login' , element:<LoginPage/> },
+  {path:'/signup'  },
+  {path:'/', element:<MainLayout /> }
+])
+
 
 function App() {
   return (
    <>
-   <h1 className="text-3xl font-bold underline text-green-600">
-      Hello world!
-    </h1>
+   <RouterProvider router={router} />
    </>
   );
 }
